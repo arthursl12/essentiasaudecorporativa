@@ -184,10 +184,8 @@ export default function App() {
             {/* Logo Group */}
             <a href="#" className="flex items-center gap-2 focus:outline-none" aria-label="Essentia Home">
               <img src="/logo.png" alt="" className="h-8 w-auto" />
-              <span className="font-display font-extrabold tracking-tight text-brand-primary flex items-center gap-5 hidden sm:inline">
-                <span>Essentia</span>
-                <span>Saúde</span>
-                <span>Corporativa</span>
+              <span className="font-display font-extrabold tracking-tight text-brand-primary flex items-center gap-3 hidden sm:inline-flex">
+                Essentia Saúde Corporativa
               </span>
               <span className="font-display font-extrabold text-lg tracking-tight text-brand-primary sm:hidden">
                 Essentia
@@ -203,7 +201,7 @@ export default function App() {
                 id="header-cta-whatsapp"
                 className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-sm group"
               >
-                Solicitar Proposta
+                Falar com especialista
                 <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </div>
