@@ -47,3 +47,6 @@ src/
 - **WhatsApp**: number `5531991422212` (31 99142-2212).
 - **AI Studio**: Express in deps but not used in src — `server.js` is generated at build by AI Studio deployment.
 - **No CI, no pre-commit hooks, no linter/formatter** — only `tsc --noEmit`.
+- **Images** in `App.tsx` use literal URL strings (`'/src/assets/images/...'`), **not** ES imports — changing to imports breaks dev server resolution.
+- **`metadata.json`** at root is an AI Studio deployment descriptor (`majorCapabilities`, `requestFramePermissions`) — not a build artifact; do not delete.
+- **Fonts** loaded via CSS `@import url(...)` in `index.css` (Inter, Sora, JetBrains Mono) — not in HTML/JS.
