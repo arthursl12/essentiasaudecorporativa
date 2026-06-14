@@ -6,7 +6,6 @@ import {
   Building,
   Users,
   Check,
-  X,
   ArrowRight,
   ArrowLeft,
   Clock,
@@ -17,18 +16,17 @@ import {
   Briefcase,
   GraduationCap,
   HeartHandshake,
-  Menu,
   FileText,
   MapPin,
   Phone,
   Activity,
-  Heart,
   Brain,
   ThumbsUp,
   CheckCircle2,
   Trash2,
   BookmarkCheck,
   ExternalLink,
+  X,
   TrendingDown
 } from 'lucide-react';
 
@@ -49,9 +47,6 @@ const HERO_MASSAGE_IMAGE = '/src/assets/images/essentia_hero_massage_17813802713
 const LOGISTICS_SETUP_IMAGE = '/src/assets/images/essentia_logistics_setup_1781380286897.jpg';
 
 export default function App() {
-  // Mobile Nav status
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   // Toggle for Seção 4 (Services) - Avulso vs Periódico
   const [activeFormat, setActiveFormat] = useState<ServiceFormat>(ServiceFormat.PERIODICO);
 
@@ -193,29 +188,8 @@ export default function App() {
               </span>
             </a>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex space-x-8 text-sm font-medium text-slate-700">
-              <a href="#dores" className="hover:text-brand-primary transition-colors py-2">Dores Comuns</a>
-              <a href="#logistica" className="hover:text-brand-primary transition-colors py-2">Como Funciona</a>
-              <a href="#servicos" className="hover:text-brand-primary transition-colors py-2">Nossos Serviços</a>
-              <a href="#roi" className="hover:text-brand-primary transition-colors py-2">Retorno (ROI)</a>
-              <a href="#passos" className="hover:text-brand-primary transition-colors py-2">Contratação em 4 passos</a>
-              <a href="#contato" className="hover:text-brand-primary transition-colors py-2">Fale Conosco</a>
-            </nav>
-
-            {/* Accent Call on Desktop */}
+            {/* Desktop CTA - Single WhatsApp Button */}
             <div className="hidden lg:flex items-center space-x-4">
-              {leads.length > 0 && (
-                <button
-                  onClick={() => setShowAdminLeads(!showAdminLeads)}
-                  className="bg-slate-100 text-slate-700 px-3.5 py-1.5 rounded-md text-xs font-semibold hover:bg-slate-200 transition-all flex items-center gap-1.5"
-                  title="Ver leads capturados localmente"
-                  id="admin-toggle-btn"
-                >
-                  <Activity className="w-3.5 h-3.5 text-brand-sage" />
-                  Visualizar Leads ({leads.length})
-                </button>
-              )}
               <a
                 href={getWhatsAppUrl()}
                 target="_blank"
@@ -228,104 +202,20 @@ export default function App() {
               </a>
             </div>
 
-            {/* Mobile Navigation Trigger */}
-            <div className="lg:hidden flex items-center gap-3">
-              {leads.length > 0 && (
-                <button
-                  onClick={() => setShowAdminLeads(!showAdminLeads)}
-                  className="bg-slate-100 p-2 rounded-lg text-slate-700"
-                  aria-label="Ver Leads"
-                >
-                  <Activity className="w-4 h-4 text-brand-sage" />
-                </button>
-              )}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-slate-700 focus:outline-none"
-                aria-label="Abrir Menu"
-                id="mobile-menu-trigger"
+            {/* Mobile CTA - Single WhatsApp Button */}
+            <div className="lg:hidden">
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-sm group"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+                Solicitar Proposta
+                <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 transition-transform" />
+              </a>
             </div>
           </div>
         </div>
-
-        {/* Mobile Navigation Panel */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="lg:hidden bg-white border-t border-brand-grey-light overflow-hidden shadow-inner"
-              id="mobile-nav-panel"
-            >
-              <div className="px-4 pt-3 pb-6 space-y-3 flex flex-col font-medium text-slate-700">
-                <a
-                  href="#dores"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-brand-primary text-base transition-all"
-                >
-                  Dores Comuns
-                </a>
-                <a
-                  href="#logistica"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-brand-primary text-base transition-all"
-                >
-                  Como Funciona
-                </a>
-                <a
-                  href="#servicos"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-brand-primary text-base transition-all"
-                >
-                  Nossos Serviços
-                </a>
-                <a
-                  href="#roi"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-brand-primary text-base transition-all"
-                >
-                  Retorno (ROI)
-                </a>
-                <a
-                  href="#passos"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-brand-primary text-base transition-all"
-                >
-                  Trilha em 4 passos
-                </a>
-                <a
-                  href="#contato"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-md hover:bg-slate-50 hover:text-brand-primary text-base transition-all"
-                >
-                  Fale Conosco
-                </a>
-                <div className="pt-3 border-t border-slate-100 flex flex-col gap-2.5">
-                  <a
-                    href={getWhatsAppUrl()}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full text-center bg-brand-primary text-white py-3 rounded-lg font-bold text-sm shadow-sm"
-                  >
-                    Solicitar Proposta Whatsapp
-                  </a>
-                  <a
-                    href="#contato"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="w-full text-center bg-slate-100 text-slate-800 py-3 rounded-lg font-semibold text-sm"
-                  >
-                    Fale com o Time Comercial ↓
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </header>
 
       {/* ADMIN LEADS DRAWER DEMOPLATES (Interactive visual showing captured leads locally) */}
