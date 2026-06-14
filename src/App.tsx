@@ -1271,11 +1271,10 @@ export default function App() {
                 CORPORATIVA
               </span>
               <p className="text-slate-400 text-xs sm:text-sm font-sans leading-relaxed mb-6">
-                Programas especializados de saúde executiva in company no estado de Minas Gerais. Liderados em estreita colaboração técnica com as diretrizes de medicina integrativa e fisioterapia laboral.
+                Programas especializados de saúde corporativa em BH e região. Liderados em estreita colaboração técnica com as diretrizes de medicina integrativa, fisioterapia laboral e segurança no trabalho.
               </p>
               <div className="flex items-center gap-2 text-xs text-slate-400 font-mono">
-                <Phone className="w-4 h-4 text-brand-sage" />
-                <span>Atendimento Telefônico direct: <strong>(31) 9 9142-2212</strong></span>
+                <Phone className="w-4 h-4 text-brand-sage" /><span>WhatsApp: <strong>(31) 9 9142-2212</strong></span>
               </div>
             </div>
 
@@ -1295,36 +1294,22 @@ export default function App() {
 
               <div>
                 <h4 className="text-white font-sans font-bold text-xs uppercase tracking-wider mb-4">
-                  Regiões de BH
+                  Atendemos
                 </h4>
                 <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
                   <li><span className="text-slate-400">Belo Horizonte</span></li>
-                  <li><span className="text-slate-400">Contagem</span></li>
-                  <li><span className="text-slate-400">Betim</span></li>
-                  <li><span className="text-slate-400">Ribeirão das Neves</span></li>
+                  <li><span className="text-slate-400">Região Metropolitana</span></li>
+                  <li><span className="text-slate-400">Outras regiões (remotamente)</span></li>
                 </ul>
               </div>
             </div>
 
-            {/* Right col - Operation credit to partner group (4 cols) */}
-            <div className="lg:col-span-4 text-xs font-sans text-slate-400 leading-relaxed border-l border-slate-800 pl-0 lg:pl-6" id="footer-bhruna-credit">
-              <h4 className="text-white font-sans font-bold text-xs uppercase tracking-wider mb-4">
-                Apoio Técnico
-              </h4>
-              <p className="mb-4">
-                A Essentia Saúde Corporativa é apoiada pela infraestrutura clínico-médica da <strong>Bhruna Estética</strong>, referência reconhecida em tratamentos preventivos em BH.
-              </p>
-              <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 text-[11px]">
-                <p className="font-semibold text-white">Sede Administrativa:</p>
-                <p className="text-slate-300 mt-0.5">Belo Horizonte, Minas Gerais, Brasil.</p>
-              </div>
-            </div>
+            
 
           </div>
 
           <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500" id="copyright">
             <p>© {new Date().getFullYear()} Essentia Saúde Corporativa. Todos os direitos reservados.</p>
-            <p className="font-mono">Desenvolvido com diretrizes de usabilidade B2B local.</p>
           </div>
         </div>
       </footer>
