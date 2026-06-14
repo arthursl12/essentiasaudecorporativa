@@ -46,6 +46,20 @@ import {
 const HERO_MASSAGE_IMAGE = '/src/assets/images/essentia_hero_massage_1781380271397.jpg';
 const LOGISTICS_SETUP_IMAGE = '/src/assets/images/essentia_logistics_setup_1781380286897.jpg';
 
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
+
+export const trackEvent = (action: string) => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', action);
+  }
+};
+
+
 export default function App() {
   // Toggle for Seção 4 (Services) - Avulso vs Periódico
   const [activeFormat, setActiveFormat] = useState<ServiceFormat>(ServiceFormat.PERIODICO);
