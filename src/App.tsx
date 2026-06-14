@@ -180,10 +180,13 @@ export default function App() {
             {/* Logo Group */}
             <a href="#" className="flex items-center gap-2 focus:outline-none" aria-label="Essentia Home">
               <img src="/logo.png" alt="" className="h-8 w-auto" />
-              <span className="font-display font-extrabold text-xl tracking-tight text-brand-primary flex items-center gap-1">
+              <span className="font-display font-extrabold tracking-tight text-brand-primary flex items-center gap-1 hidden sm:inline">
                 <span>Essentia</span>
                 <span>Saúde</span>
                 <span>Corporativa</span>
+              </span>
+              <span className="font-display font-extrabold text-lg tracking-tight text-brand-primary sm:hidden">
+                Essentia
               </span>
             </a>
 
@@ -207,10 +210,10 @@ export default function App() {
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-sm group"
+                className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-xs px-3 py-2 rounded-lg transition-all shadow-sm group"
               >
-                Solicitar Proposta
-                <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 transition-transform" />
+                Solicitar
+                <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </div>
           </div>
