@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
-  MessageSquare,
   Calendar,
   Building,
   Users,
@@ -326,7 +325,7 @@ export default function App() {
                     id="hero-whatsapp-btn"
                     className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-base px-8 py-4.5 rounded-xl transition-all shadow-md group border border-transparent"
                   >
-                    <MessageSquare className="w-5 h-5 mr-2.5 text-brand-green-accent fill-brand-green-accent" />
+                    <img src="/wpp-white.png" alt="" className="w-5 h-5 mr-2.5" />
                     Solicitar proposta personalizada
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                   </a>
@@ -976,7 +975,7 @@ export default function App() {
                       id="contato-whatsapp-shortcut"
                       className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl transition-all shadow-md group border border-transparent"
                     >
-                      <MessageSquare className="w-5 h-5 mr-2.5 text-brand-green-accent fill-brand-green-accent animate-bounce" />
+                      <img src="/wpp-white.png" alt="" className="w-5 h-5 mr-2.5" />
                       Falar com a Essentia no WhatsApp agora
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-0.5 transition-transform" />
                     </a>
@@ -1221,14 +1220,10 @@ export default function App() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 bg-[#1d5e6e] text-white hover:bg-brand-primary-dark font-sans font-bold text-xs sm:text-sm px-4 py-3 sm:px-5 sm:py-3.5 rounded-full shadow-2xl transition-all border border-white/20 select-none group"
               aria-label="Falar com atendente no Whatsapp"
-            >
-              {/* WhatsApp custom green pulse badge */}
-              <span className="relative flex h-3.5 w-3.5 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-brand-green-accent"></span>
-              </span>
-              <span>Solicitar proposta WhatsApp</span>
-            </a>
+             >
+               <img src="/wpp-white.png" alt="" className="w-5 h-5" />
+               <span>Solicitar proposta WhatsApp</span>
+             </a>
           </motion.div>
         )}
       </AnimatePresence>
