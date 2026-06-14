@@ -26,6 +26,7 @@ import {
   BookmarkCheck,
   ExternalLink,
   X,
+  Menu,
   TrendingDown
 } from 'lucide-react';
 
@@ -48,6 +49,9 @@ const LOGISTICS_SETUP_IMAGE = '/src/assets/images/essentia_logistics_setup_17813
 export default function App() {
   // Toggle for Seção 4 (Services) - Avulso vs Periódico
   const [activeFormat, setActiveFormat] = useState<ServiceFormat>(ServiceFormat.PERIODICO);
+
+  // Mobile menu state
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Carousel status for Testimonials
   const [currentTestimonialIdx, setCurrentTestimonialIdx] = useState(0);
@@ -180,7 +184,7 @@ export default function App() {
             {/* Logo Group */}
             <a href="#" className="flex items-center gap-2 focus:outline-none" aria-label="Essentia Home">
               <img src="/logo.png" alt="" className="h-8 w-auto" />
-              <span className="font-display font-extrabold tracking-tight text-brand-primary flex items-center gap-1 hidden sm:inline">
+              <span className="font-display font-extrabold tracking-tight text-brand-primary flex items-center gap-3 hidden sm:inline">
                 <span>Essentia</span>
                 <span>Saúde</span>
                 <span>Corporativa</span>
@@ -204,21 +208,46 @@ export default function App() {
               </a>
             </div>
 
-            {/* Mobile CTA - Single WhatsApp Button */}
+            {/* Mobile Hamburger Menu */}
             <div className="lg:hidden">
-              <a
-                href={getWhatsAppUrl()}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-xs px-3 py-2 rounded-lg transition-all shadow-sm group"
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 text-slate-700 focus:outline-none"
+                aria-label={mobileMenuOpen ? "Fechar Menu" : "Abrir Menu"}
+                id="mobile-menu-trigger"
               >
-                Solicitar
-                <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-0.5 transition-transform" />
-              </a>
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
             </div>
           </div>
         </div>
       </header>
+
+      {/* Mobile Navigation Panel */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-white border-t border-brand-grey-light overflow-hidden shadow-inner"
+            id="mobile-nav-panel"
+          >
+            <div className="px-4 pt-3 pb-6 space-y-3 flex flex-col font-medium text-slate-700">
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-3 py-3 rounded-lg bg-brand-primary text-white font-bold text-sm transition-all shadow-sm text-center"
+              >
+                Falar com especialista
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ADMIN LEADS DRAWER DEMOPLATES (Interactive visual showing captured leads locally) */}
       <AnimatePresence>
