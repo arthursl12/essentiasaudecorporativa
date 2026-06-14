@@ -1,0 +1,6 @@
+{
+  "name": "Essentia Saúde Corporativa",
+  "description": "Programas completos de saúde corporativa — quick massage, psicologia e palestras — sob medida para empresas em Belo Horizonte e RMBH.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
