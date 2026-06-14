@@ -50,3 +50,7 @@ src/
 - **Images** in `App.tsx` use literal URL strings (`'/src/assets/images/...'`), **not** ES imports — changing to imports breaks dev server resolution.
 - **`metadata.json`** at root is an AI Studio deployment descriptor (`majorCapabilities`, `requestFramePermissions`) — not a build artifact; do not delete.
 - **Fonts** loaded via CSS `@import url(...)` in `index.css` (Inter, Sora, JetBrains Mono) — not in HTML/JS.
+
+## Agent Rules
+
+- **Never commit or push without explicit user command** — only run lint/type-check for verification
