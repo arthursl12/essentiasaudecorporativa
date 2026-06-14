@@ -151,6 +151,7 @@ export default function App() {
 
       setIsSubmitting(false);
       setSubmitSuccess(true);
+      trackEvent('form_sent_corp');
       setFormInput({
         name: '',
         company: '',
@@ -214,6 +215,7 @@ export default function App() {
                 rel="noreferrer"
                 id="header-cta-whatsapp"
                 className="inline-flex items-center justify-center gap-2 bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-sm group"
+                onClick={() => trackEvent('whatsapp_click')}
               >
                 <img src="/wpp-white.png" alt="" className="w-5 h-5" />
                 Falar com especialista
@@ -252,7 +254,7 @@ export default function App() {
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => { setMobileMenuOpen(false); trackEvent('whatsapp_click'); }}
                 className="inline-flex items-center justify-center gap-2 px-3 py-3 rounded-lg bg-brand-primary text-white font-bold text-sm transition-all shadow-sm text-center"
               >
                 <img src="/wpp-white.png" alt="" className="w-5 h-5" />
@@ -766,6 +768,7 @@ export default function App() {
                             target="_blank"
                             rel="noreferrer"
                             className="w-full text-center py-2.5 px-4 rounded-lg bg-slate-100 hover:bg-brand-primary hover:text-white text-slate-800 text-xs font-bold transition-all inline-flex items-center justify-center gap-1.5 focus:outline-none select-none"
+                            onClick={() => trackEvent('whatsapp_click')}
                           >
                             Solicitar este serviço
                             <ArrowRight className="w-4 h-4 ml-1" />
@@ -960,6 +963,7 @@ export default function App() {
                 rel="noreferrer"
                 id="steps-whatsapp-cta"
                 className="inline-flex items-center gap-1 text-slate-800 hover:text-brand-primary bg-slate-100 hover:bg-slate-200/60 font-sans font-bold text-sm px-6 py-3 rounded-full transition-all"
+                onClick={() => trackEvent('whatsapp_click')}
               >
                 Solicitar contato assistido comercial via Whatsapp
                 <ArrowRight className="w-4 h-4 text-brand-primary ml-1" />
@@ -1019,6 +1023,7 @@ export default function App() {
                       rel="noreferrer"
                       id="contato-whatsapp-shortcut"
                       className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl transition-all shadow-md group border border-transparent"
+                      onClick={() => trackEvent('whatsapp_click')}
                     >
                       <img src="/wpp-white.png" alt="" className="w-5 h-5 mr-2.5" />
                       Falar com a Essentia no WhatsApp agora
@@ -1265,6 +1270,7 @@ export default function App() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 bg-[#1d5e6e] text-white hover:bg-brand-primary-dark font-sans font-bold text-xs sm:text-sm px-4 py-3 sm:px-5 sm:py-3.5 rounded-full shadow-2xl transition-all border border-white/20 select-none group"
               aria-label="Falar com atendente no Whatsapp"
+              onClick={() => trackEvent('whatsapp_click')}
              >
                <img src="/wpp-white.png" alt="" className="w-5 h-5" />
                <span>Solicitar proposta WhatsApp</span>
