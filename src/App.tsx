@@ -179,12 +179,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo Group */}
-            <a href="#" className="flex flex-col focus:outline-none" aria-label="Essentia Home">
-              <span className="font-display font-extrabold text-2xl tracking-tight text-brand-primary flex items-center gap-1.5">
-                ESSENTIA <span className="text-xs bg-brand-sage/15 text-brand-primary px-2 py-0.5 rounded-full font-sans font-semibold">SAÚDE</span>
-              </span>
-              <span className="text-[10px] tracking-widest text-brand-sage font-sans uppercase font-bold -mt-1">
-                CORPORATIVA
+            <a href="#" className="flex items-center gap-2 focus:outline-none" aria-label="Essentia Home">
+              <img src="/logo.png" alt="" className="h-8 w-auto" />
+              <span className="font-display font-extrabold text-xl tracking-tight text-brand-primary flex items-center gap-1">
+                <span>Essentia</span>
+                <span>Saúde</span>
+                <span>Corporativa</span>
               </span>
             </a>
 
@@ -1264,12 +1264,14 @@ export default function App() {
             
             {/* Left col - Brand footer (4 cols) */}
             <div className="lg:col-span-4" id="footer-brand-info">
-              <span className="font-display font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
-                ESSENTIA <span className="text-[10px] bg-white/10 text-brand-green-accent px-2 py-0.5 rounded-full font-sans font-bold">SAÚDE</span>
-              </span>
-              <span className="text-[9px] tracking-widest text-[#63918b] font-sans uppercase font-bold block -mt-1 mb-4">
-                CORPORATIVA
-              </span>
+              <a href="#" className="flex items-center gap-2 mb-4" aria-label="Essentia Home">
+                <img src="/logo.png" alt="" className="h-8 w-auto" />
+                <span className="font-display font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
+                  <span>Essentia</span>
+                  <span>Saúde</span>
+                  <span>Corporativa</span>
+                </span>
+              </a>
               <p className="text-slate-400 text-xs sm:text-sm font-sans leading-relaxed mb-6">
                 Programas especializados de saúde corporativa em BH e região. Liderados em estreita colaboração técnica com as diretrizes de medicina integrativa, fisioterapia laboral e segurança no trabalho.
               </p>
