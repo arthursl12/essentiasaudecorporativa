@@ -28,7 +28,8 @@ import {
   CheckCircle2,
   Trash2,
   BookmarkCheck,
-  ExternalLink
+  ExternalLink,
+  TrendingDown
 } from 'lucide-react';
 
 import { ServiceFormat, LeadFormInput, LeadSubmission } from './types';
@@ -422,10 +423,8 @@ export default function App() {
                 </h1>
 
                 <p className="text-slate-600 text-lg sm:text-xl font-sans font-normal leading-relaxed mb-8 max-w-2xl" id="hero-subtext">
-                  Levamos programas transversais de <span className="font-semibold text-slate-800">saúde corporativa</span> —{' '}
-                  <span className="font-semibold text-slate-800">quick massage</span>,{' '}
-                  <span className="font-semibold text-slate-800">psicologia</span> e{' '}
-                  <span className="font-semibold text-slate-800">palestras</span> — direto para dentro da sua empresa. Sem logística para o RH. Sem interrupção na operação. Com resultado mensurável nos seus indicadores.
+                  Levamos programas transversais de <span className="font-semibold text-slate-800">saúde corporativa</span> direto para dentro da sua empresa.<br/>
+                  Sem interrupção na operação. Com resultado mensurável nos seus indicadores.
                 </p>
 
                 {/* Hero CTAs */}
@@ -454,7 +453,7 @@ export default function App() {
                 {/* Trust label in BH */}
                 <p className="text-xs text-brand-grey-mid flex items-center gap-1.5" id="hero-local-trust">
                   <span className="inline-block w-2 h-2 rounded-full bg-brand-green-accent animate-ping"></span>
-                  Idealizado para RHs de Belo Horizonte, Contagem, Betim e RMBH.
+                  Idealizado para empresas de Belo Horizonte e região metropolitana.
                 </p>
               </div>
 
@@ -517,10 +516,10 @@ export default function App() {
             {/* Header copy */}
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-brand-sage uppercase tracking-wider text-xs font-bold block mb-3 font-display">
-                Isso soa familiar?
+                Soa familiar?
               </span>
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-900 tracking-tight mb-4" id="dores-main-title">
-                Se você cuida de pessoas em uma empresa de BH, estes desafios provavelmente já tiraram seu sono.
+                Se você cuida de pessoas na sua empresa, estes desafios provavelmente já tiraram seu sono
               </h2>
               <p className="text-slate-600 text-sm sm:text-base font-sans">
                 Gerenciar pessoas exige foco estratégico. Entretanto, problemas cotidianos de ergonomia, saúde mental e conformidade legal sugam toda a energia do setor.
@@ -541,7 +540,7 @@ export default function App() {
                       <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-brand-primary" id={`pain-icon-${card.id}`}>
                         {i === 0 && <Activity className="w-7 h-7" />}
                         {i === 1 && <Brain className="w-7 h-7" />}
-                        {i === 2 && <TrendingUp className="w-7 h-7" />}
+                        {i === 2 && <TrendingDown className="w-7 h-7" />}
                         {i === 3 && <Briefcase className="w-7 h-7" />}
                       </div>
                       <h3 className="font-display font-bold text-lg sm:text-xl text-slate-900">
@@ -556,9 +555,9 @@ export default function App() {
 
                   {/* Factoid citation box: 13px italic light block */}
                   <div className="bg-brand-sage-light/50 border border-brand-sage/10 rounded-xl p-3 sm:p-4 text-xs font-sans text-brand-slate-dark leading-relaxed">
-                    <span className="font-semibold block text-brand-primary text-[10px] uppercase tracking-wider mb-1 font-mono">
+                    {/* <span className="font-semibold block text-brand-primary text-[10px] uppercase tracking-wider mb-1 font-mono">
                       Evidência Científica / Relatório
-                    </span>
+                    </span> */}
                     <p className="italic">“{card.statistic}”</p>
                     <span className="text-[10px] text-brand-grey-mid mt-1.5 block font-medium">
                       Fonte: {card.statSource}
@@ -600,7 +599,7 @@ export default function App() {
                 Nós levamos tudo até você. Sua equipe e seu RH em paz.
               </h2>
               <p className="text-slate-600 text-base sm:text-lg font-sans leading-relaxed" id="logistica-intro">
-                A <span className="font-semibold text-brand-primary">Essentia Saúde Corporativa</span> é o braço empresarial da <strong>Bhruna Estética</strong> — referência consolidada em saúde e estética em Belo Horizonte. Nossa equipe chega na sua sede com estrutura física total: cadeiras ergonômicas certificadas por fisioterapeutas, materiais de higienização de ponta e especialistas qualificados. Sem burocracia, sem termos ocultos e sem atrapalhar o andamento operacional.
+                A equipe da <span className="font-semibold text-brand-primary">Essentia Saúde Corporativa</span> chega na sua sede com estrutura física total: cadeiras ergonômicas certificadas por fisioterapeutas, materiais de higienização de ponta e especialistas qualificados. Sem burocracia, sem termos ocultos e sem atrapalhar o andamento operacional.
               </p>
             </div>
 
@@ -662,13 +661,13 @@ export default function App() {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="text-sm font-sans font-bold text-slate-900">Área de Atendimento Local Essentia</p>
-                      <p className="text-xs text-brand-slate-dark">Atendimento integral em Belo Horizonte, Contagem, Betim, Ribeirão das Neves e RMBH.</p>
+                      <p className="text-sm font-sans font-bold text-slate-900">Atendimento Presencial em Belo Horizonte e região</p>
+                      <p className="text-xs text-brand-slate-dark">Atendimento à distância em outras localidads.</p>
                     </div>
                   </div>
-                  <span className="text-xs bg-brand-primary/10 text-brand-primary font-bold px-3 py-1.5 rounded-lg border border-brand-primary/10 font-sans whitespace-nowrap">
+                  {/* <span className="text-xs bg-brand-primary/10 text-brand-primary font-bold px-3 py-1.5 rounded-lg border border-brand-primary/10 font-sans whitespace-nowrap">
                     Sem taxas e logística de frete extras
-                  </span>
+                  </span> */}
                 </div>
 
               </div>
@@ -691,7 +690,7 @@ export default function App() {
                   </div>
 
                   <div className="mt-4 text-xs font-sans text-brand-grey-mid leading-relaxed text-center">
-                    Nossos profissionais chegam fardados, higienizam os pertences e geram o relatório pós-ação agregando facilidade para o setor de RH.
+                    Nossos profissionais chegam pontualmente, uniformizados, higienizam os pertences e já estão prontos para a ação, agregando facilidade para o setor de RH.
                   </div>
                 </div>
               </div>
@@ -714,7 +713,7 @@ export default function App() {
                 O que a Essentia entrega para a sua empresa
               </h2>
               <p className="text-slate-600 text-sm sm:text-base font-sans">
-                Selecione o formato ideal abaixo de acordo com o momento do RH e receba orçamento correspondente sem taxas ou surpresas de frete adicionais.
+                Selecione o formato ideal abaixo de acordo com o momento do RH e receba orçamento correspondente em 24h úteis.
               </p>
             </div>
 
@@ -979,7 +978,7 @@ export default function App() {
                     Estatísticas Corporativas Reais
                   </span>
                   <h3 className="font-display font-black text-2xl sm:text-3xl text-white mb-3">
-                    Bem-estar não é custo. É estratégia com retorno financeiro mensurável.
+                    Bem-estar corporativo é investimento com retorno financeiro mensurável.
                   </h3>
                   <p className="text-white/80 text-xs sm:text-sm font-sans">
                     Cada real investido em saúde e ergonomia corporativa atua ativamente na redução de processos trabalhistas, redução de sinistralidade de planos e aumento de performance global.
@@ -1162,10 +1161,7 @@ export default function App() {
                     Pronto para transformar o bem-estar da sua equipe em resultado concreto?
                   </h2>
                   <p className="text-slate-600 text-sm sm:text-base font-sans leading-relaxed mb-6">
-                    Fale com a <strong>Essentia Saúde Corporativa</strong> e receba uma proposta personalizada para o tamanho e perfil da sua empresa. Atendemos Belo Horizonte, Contagem, Betim, Ribeirão Neves e toda a Região Metropolitana de BH.
-                  </p>
-                  <p className="text-slate-600 text-sm sm:text-base font-sans mb-8 font-semibold">
-                    Sem compromisso. Sem custo para a primeira conversa. Com a certeza de que você vai sair com clareza sobre o que faz sentido para a sua empresa.
+                    Fale com a <strong>Essentia Saúde Corporativa</strong> e receba uma proposta personalizada para o tamanho e perfil da sua empresa. Orçamento sem compromisso.
                   </p>
                 </div>
 
@@ -1186,7 +1182,7 @@ export default function App() {
                     </div>
                     <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 font-sans">
                       <Check className="w-5 h-5 text-brand-green-accent" />
-                      <span>Fisioterapeutas & Psicólogos homologados</span>
+                      <span>Profissionais qualificados</span>
                     </div>
                   </div>
 

@@ -3,7 +3,7 @@ import { ServiceDetails, Testimonial } from './types';
 export const HERO_METRICS = [
   {
     value: '↓ 35%',
-    label: 'Absenteísmo',
+    label: 'Redução do Absenteísmo',
     description: 'em programas recorrentes',
   },
   {
@@ -11,11 +11,11 @@ export const HERO_METRICS = [
     label: 'ROI médio',
     description: 'em bem-estar corporativo',
   },
-  {
-    value: '100%',
-    label: 'In Company',
-    description: 'estrutura e logística por conta da Essentia',
-  }
+  // {
+  //   value: '100%',
+  //   label: 'In Company',
+  //   description: 'estrutura e logística por conta da Essentia',
+  // }
 ];
 
 export interface PainCard {
@@ -66,7 +66,7 @@ export const COMPARATIVE_ITEMS = {
     'Reservar, preparar e limpar o espaço físico corporativo',
     'Organizar listas de agendamento e gerenciar horários',
     'Monitorar pontualidade, fardamento e postura técnica',
-    'Coletar feedbacks individuais e formatar relatórios'
+    // 'Coletar feedbacks individuais e formatar relatórios'
   ],
   solutions: [
     'Cadeiras ergonômicas levadas, montadas e higienizadas por nós',
@@ -74,7 +74,7 @@ export const COMPARATIVE_ITEMS = {
     'Espaço configurado discretamente nos seus corredores ou salas',
     'Agendamento digital prático operado pelo nosso time',
     'Profissionais uniformizados, pontuais e extremamente discretos',
-    'Relatório executivo de engajamento e métrica de adesão entregue'
+    // 'Relatório executivo de engajamento e métrica de adesão entregue'
   ]
 };
 
@@ -89,7 +89,7 @@ export const SERVICES_AVULSO: ServiceDetails[] = [
       'Datas Comemorativas (Dia das Mães, dos Pais, Mulher)',
       'Ações pontuais de Endomarketing e Integração'
     ],
-    duration: 'Ações de 4h a 8h no dia do evento (10 a 20 min por colaborador)'
+    duration: 'Ações de 4h a 8h no dia do evento (15 a 20 min por colaborador)'
   },
   {
     pilar: 'PILAR 2',
@@ -128,7 +128,7 @@ export const SERVICES_PERIODICO: ServiceDetails[] = [
       'Diminuição progressiva de atestados médicos',
       'Enriquecimento do plano de benefícios atrativo'
     ],
-    duration: 'Calendário recorrente contratual (sessões recorrentes integradas)'
+    duration: 'Sessões recorrentes periódicas (15 a 20 min por colaborador)'
   },
   {
     pilar: 'PILAR 2',
