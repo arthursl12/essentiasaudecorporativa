@@ -184,7 +184,7 @@ export default function App() {
             {/* Logo Group */}
             <a href="#" className="flex items-center gap-2 focus:outline-none" aria-label="Essentia Home">
               <img src="/logo.png" alt="" className="h-8 w-auto" />
-              <span className="font-display font-extrabold tracking-tight text-brand-primary flex items-center gap-3 hidden sm:inline">
+              <span className="font-display font-extrabold tracking-tight text-brand-primary flex items-center gap-5 hidden sm:inline">
                 <span>Essentia</span>
                 <span>Saúde</span>
                 <span>Corporativa</span>
