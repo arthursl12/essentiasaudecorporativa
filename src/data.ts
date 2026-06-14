@@ -11,11 +11,11 @@ export const HERO_METRICS = [
     label: 'ROI médio',
     description: 'em bem-estar corporativo',
   },
-  // {
-  //   value: '100%',
-  //   label: 'In Company',
-  //   description: 'estrutura e logística por conta da Essentia',
-  // }
+  {
+    value: '+40%',
+    label: 'eNPS',
+    description: 'aumento satisfação interna',
+  }
 ];
 
 export interface PainCard {

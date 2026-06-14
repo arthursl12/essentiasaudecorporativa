@@ -199,8 +199,9 @@ export default function App() {
                 target="_blank"
                 rel="noreferrer"
                 id="header-cta-whatsapp"
-                className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-sm group"
+                className="inline-flex items-center justify-center gap-2 bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-sm group"
               >
+                <img src="/wpp-white.png" alt="" className="w-5 h-5" />
                 Falar com especialista
                 <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 transition-transform" />
               </a>
@@ -349,8 +350,7 @@ export default function App() {
                 {/* Hero CTAs */}
                 <div className="flex flex-col sm:flex-row gap-4 mb-8" id="hero-actions">
                   <a
-                    href={getWhatsAppUrl()}
-                    target="_blank"
+                    href="#contato"
                     rel="noreferrer"
                     id="hero-whatsapp-btn"
                     className="inline-flex items-center justify-center bg-brand-primary text-white hover:bg-brand-primary-dark font-sans font-bold text-base px-8 py-4.5 rounded-xl transition-all shadow-md group border border-transparent"
@@ -410,7 +410,7 @@ export default function App() {
 
             {/* Strip of 3 micro-metrics (Desktop position: nested. Mobile placement handled gracefully below) */}
             <div className="mt-16 lg:mt-20 border-t border-brand-grey-light/70 pt-8" id="metrics-strip">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
                 {HERO_METRICS.map((metric, i) => (
                   <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white p-5 rounded-2xl shadow-sm border border-brand-grey-light/40" id={`hero-metric-${i}`}>
                     <div className="font-display font-extrabold text-3xl md:text-4xl text-brand-primary tracking-tight whitespace-nowrap">
