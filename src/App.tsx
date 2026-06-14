@@ -239,8 +239,9 @@ export default function App() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-3 rounded-lg bg-brand-primary text-white font-bold text-sm transition-all shadow-sm text-center"
+                className="inline-flex items-center justify-center gap-2 px-3 py-3 rounded-lg bg-brand-primary text-white font-bold text-sm transition-all shadow-sm text-center"
               >
+                <img src="/wpp-white.png" alt="" className="w-5 h-5" />
                 Falar com especialista
               </a>
             </div>
