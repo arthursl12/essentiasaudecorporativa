@@ -131,7 +131,7 @@ export default function App() {
     }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formInput.name || !formInput.company || !formInput.contact) {
       alert('Por favor, preencha todos os campos obrigatórios.');
@@ -140,21 +140,27 @@ export default function App() {
 
     setIsSubmitting(true);
 
-    // Simulate database write
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formInput),
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || 'Erro no envio');
+
+      // Success - existing localStorage + GTM
       const newLead: LeadSubmission = {
         ...formInput,
         id: 'lead_' + Date.now(),
         timestamp: new Date().toLocaleString('pt-BR')
       };
-
       const updatedLeads = [newLead, ...leads];
       setLeads(updatedLeads);
       localStorage.setItem('essentia_leads', JSON.stringify(updatedLeads));
 
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
       trackEvent('form_sent_corp');
+      setSubmitSuccess(true);
       setFormInput({
         name: '',
         company: '',
@@ -162,10 +168,12 @@ export default function App() {
         numCollaborators: '1-50',
         contact: ''
       });
-
-      // Show temporary Toast
-      setTimeout(() => setSubmitSuccess(false), 9000);
-    }, 1200);
+    } catch (error) {
+      alert('Erro ao enviar. Tente novamente ou chame no WhatsApp.');
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const deleteLead = (id: string) => {
