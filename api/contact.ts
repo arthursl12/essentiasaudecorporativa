@@ -21,16 +21,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
   `;
 
+  // Defensive validation: Check if BREVO_API_KEY is configured
+  const brevoApiKey = process.env.BREVO_API_KEY;
+  if (!brevoApiKey) {
+    console.error('BREVO_API_KEY not found in environment variables');
+    return res.status(500).json({ error: 'Configuração de email ausente: BREVO_API_KEY não definida' });
+  }
+
   try {
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: {
         'accept': 'application/json',
-        'api-key': process.env.BREVO_API_KEY,
+        'api-key': brevoApiKey,
         'content-type': 'application/json',
       },
       body: JSON.stringify({
-        sender: { name: 'Essentia', email: 'noreply@essentia.com.br' },
+        sender: { name: 'Arthur (da Essentia Saúde Corporativa)', email: 'essentiamarketingsocialmedia@gmail.com' },
         to: [
           { email: 'bhruna.azevedo@hotmail.com' },
           { email: 'arthursoutolima@gmail.com' },
@@ -42,12 +49,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (!response.ok) {
       const error = await response.json();
-      throw new Error(error.message || 'Falha ao enviar email');
+      throw new Error(error.message || `Falha ao enviar email (${response.status})`);
     }
 
     return res.status(200).json({ success: true });
-  } catch (error) {
+  } catch (error: any) {
     console.error('Brevo error:', error);
-    return res.status(500).json({ error: 'Falha ao enviar email' });
+    return res.status(500).json({ error: error.message || 'Falha ao enviar email' });
   }
 }
