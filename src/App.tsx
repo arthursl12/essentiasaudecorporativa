@@ -890,6 +890,10 @@ export default function App() {
             <div className="absolute inset-0 bg-slate-900/60" />
             {/* Blur layer */}
             <div className="absolute inset-0 backdrop-blur-sm" />
+            {/* Top fade - blends with section above (Sobre Nós: bg-slate-50) */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-slate-50 to-transparent pointer-events-none" />
+            {/* Bottom fade - blends with section below (Passos: bg-slate-50) */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none" />
           </div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -1079,7 +1083,7 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch" ref={formRef}>
               
               {/* COLUNA ESQ (50% / 6 cols) */}
-              <div className="lg:col-span-12 flex flex-col justify-between" id="contato-info-side">
+              <div className="lg:col-span-6 flex flex-col justify-between" id="contato-info-side">
                 <div>
                   <span className="text-brand-sage uppercase tracking-wider text-xs font-bold block mb-3 font-display">
                     Empresas de BH e Região Metropolitana
@@ -1137,7 +1141,7 @@ export default function App() {
               </div>
 
               {/* COLUNA DIR (50% / 6 cols) - FORMULÁRIO */}
-              <div className="lg:col-span-6 bg-slate-50 border border-slate-200/75 p-6 sm:p-10 rounded-2xl shadow-inner flex flex-col justify-between hidden" id="contato-form-side">
+              <div className="lg:col-span-6 bg-slate-50 border border-slate-200/75 p-6 sm:p-10 rounded-2xl shadow-inner flex flex-col justify-between" id="contato-form-side">
                 
                 <div>
                   <h3 className="font-display font-extrabold text-lg text-slate-900 mb-6">
