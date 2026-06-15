@@ -878,8 +878,21 @@ export default function App() {
         </section>
 
         {/* SECTION 5 — PROVA SOCIAL E MÉTRICAS DE ROI */}
-        <section className="py-16 lg:py-24 bg-white" id="roi">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 lg:py-24 relative overflow-hidden" id="roi">
+          {/* Background Image with Blur Overlay */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/images/speech_bkg.jpeg"
+              alt=""
+              className="w-full h-full object-cover"
+            />
+            {/* Dark overlay for readability */}
+            <div className="absolute inset-0 bg-slate-900/60" />
+            {/* Blur layer */}
+            <div className="absolute inset-0 backdrop-blur-sm" />
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             {/* Bloco C — Métricas de ROI (FUNDO ESCURO - DELIBERADO) */}
             <div className="bg-brand-primary text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-lg border border-brand-primary-dark" id="roi-dark-block">
               {/* Backdrops patterns */}
