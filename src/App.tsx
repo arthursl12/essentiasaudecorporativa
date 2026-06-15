@@ -43,8 +43,8 @@ import {
 } from './data';
 
 // Import local photos generated for highest fidelity representation
-const HERO_MASSAGE_IMAGE = '/src/assets/images/essentia_hero_massage_1781380271397.jpg';
-const LOGISTICS_SETUP_IMAGE = '/src/assets/images/essentia_logistics_setup_1781380286897.jpg';
+const HERO_MASSAGE_IMAGE = '/images/essentia_hero_massage_1781380271397.jpg';
+const LOGISTICS_SETUP_IMAGE = '/images/essentia_logistics_setup_1781380286897.jpg';
 
 declare global {
   interface Window {
