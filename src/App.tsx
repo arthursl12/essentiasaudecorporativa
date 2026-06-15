@@ -979,7 +979,7 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch" ref={formRef}>
               
               {/* COLUNA ESQ (50% / 6 cols) */}
-              <div className="lg:col-span-6 flex flex-col justify-between" id="contato-info-side">
+              <div className="lg:col-span-12 flex flex-col justify-between" id="contato-info-side">
                 <div>
                   <span className="text-brand-sage uppercase tracking-wider text-xs font-bold block mb-3 font-display">
                     Empresas de BH e Região Metropolitana
@@ -1013,9 +1013,11 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="border-t border-slate-100 pt-8" id="wa-direct-alternative">
+                  <div className="border-t border-slate-100 pt-8 flex flex-col items-center text-center" id="wa-direct-alternative">
                     <span className="text-xs text-brand-slate-dark uppercase tracking-widest font-mono font-bold block mb-3">
-                      Ou fale conosco agora e ganhe tempo:
+                      {/* Ou fale conosco agora e ganhe tempo: */}
+                      Fale conosco agora:
+
                     </span>
                     <a
                       href={getWhatsAppUrl()}
@@ -1035,7 +1037,7 @@ export default function App() {
               </div>
 
               {/* COLUNA DIR (50% / 6 cols) - FORMULÁRIO */}
-              <div className="lg:col-span-6 bg-slate-50 border border-slate-200/75 p-6 sm:p-10 rounded-2xl shadow-inner flex flex-col justify-between" id="contato-form-side">
+              <div className="lg:col-span-6 bg-slate-50 border border-slate-200/75 p-6 sm:p-10 rounded-2xl shadow-inner flex flex-col justify-between hidden" id="contato-form-side">
                 
                 <div>
                   <h3 className="font-display font-extrabold text-lg text-slate-900 mb-6">
