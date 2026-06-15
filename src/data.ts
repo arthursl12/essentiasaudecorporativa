@@ -245,7 +245,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: 'Na linha de frente do cuidado com o colaborador. Previne LER/DORT, reduz afastamentos e coloca a saúde do colaborador no centro da operação.',
     specialties: ['Saúde do Trabalho', 'Massoterapia Corporativa'],
     borderColor: '#5aaa5a',
-    photo: '/images/team-bhruna.jpg',
+    photo: '/images/bhruna.JPG',
     initials: 'BA'
   },
   {
@@ -255,7 +255,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: 'Especialista em saúde emocional e neuropsicologia. Atua na prevenção do Burnout com escuta clínica qualificada e intervenções práticas para equipes e líderes.',
     specialties: ['Psicologia Corporativa', 'Neuropsicologia', 'Prevenção de Burnout'],
     borderColor: '#63918b',
-    photo: '/images/team-roseli.jpg',
+    photo: '/images/roseli.jpeg',
     initials: 'RS'
   },
   {
@@ -265,7 +265,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: 'Especialista em SST e inteligência analítica. Converte dados de afastamento e clima organizacional em estratégias de prevenção com ROI claro',
     specialties: ['Segurança do Trabalho', 'Inteligência de Dados', 'SST'],
     borderColor: '#1d5e6e',
-    photo: '/images/team-arthur.jpg',
+    photo: '/images/arthur.jpg',
     initials: 'AL'
   }
 ];
