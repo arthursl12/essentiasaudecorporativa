@@ -799,13 +799,13 @@ export default function App() {
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-brand-sage uppercase tracking-wider text-xs font-bold block mb-3 font-display">
-                Quem está por trás da Essentia
+                Sobre Nós
               </span>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight mb-4">
-                Especialistas em saúde. Parceiros estratégicos do seu RH.
+                Especialistas em saúde.<br/>Parceiros estratégicos do seu RH.
               </h2>
               <p className="text-slate-600 text-base sm:text-lg font-sans leading-relaxed">
-                A Essentia reúne profissionais de saúde do trabalho, psicologia e engenharia de segurança
+                A Essentia reúne profissionais de saúde do trabalho, psicologia e engenharia 
                 com um objetivo em comum: transformar o ambiente corporativo em um lugar onde as pessoas
                 rendem mais porque se sentem bem.
               </p>
