@@ -27,7 +27,9 @@ import {
   ExternalLink,
   X,
   Menu,
-  TrendingDown
+  TrendingDown,
+  Stethoscope,
+  User
 } from 'lucide-react';
 
 import { ServiceFormat, LeadFormInput, LeadSubmission } from './types';
@@ -39,7 +41,8 @@ import {
   SERVICES_PERIODICO,
   PARTNERS_LOGOS,
   TESTIMONIALS,
-  STEPS
+  STEPS,
+  TEAM_MEMBERS
 } from './data';
 
 // Import local photos generated for highest fidelity representation
@@ -787,6 +790,90 @@ export default function App() {
               💡 Deslize acima para ver os outros serviços de saúde corporativa.
             </p>
 
+          </div>
+        </section>
+
+        {/* SECTION 4.5 — SOBRE NÓS */}
+        <section className="py-16 lg:py-24 bg-slate-50 border-y border-slate-100" id="sobre-nos">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-brand-sage uppercase tracking-wider text-xs font-bold block mb-3 font-display">
+                Quem está por trás da Essentia
+              </span>
+              <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight mb-4">
+                Especialistas em saúde. Parceiros estratégicos do seu RH.
+              </h2>
+              <p className="text-slate-600 text-base sm:text-lg font-sans leading-relaxed">
+                A Essentia reúne profissionais de saúde do trabalho, psicologia e engenharia de segurança
+                com um objetivo em comum: transformar o ambiente corporativo em um lugar onde as pessoas
+                rendem mais porque se sentem bem.
+              </p>
+            </div>
+
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {TEAM_MEMBERS.map((member, index) => (
+                <motion.div
+                  key={member.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="bg-white rounded-2xl p-7 md:p-8 border border-slate-100/60 flex flex-col h-full hover:shadow-lg hover:border-brand-primary/20 transition-all duration-300 relative"
+                  style={{ borderTop: `3px solid ${member.borderColor}` }}
+                >
+                  {/* Photo */}
+                  <div className="flex justify-center mb-6">
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-30 h-30 rounded-full object-cover border border-slate-200"
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      />
+                    ) : null}
+                    {!member.photo || member.photo === '' ? (
+                      <div className="w-30 h-30 rounded-full bg-brand-primary/10 flex items-center justify-center border border-slate-200">
+                        <span className="font-display font-bold text-3xl text-brand-primary">{member.initials}</span>
+                      </div>
+                    ) : null}
+                  </div>
+
+                  {/* Name */}
+                  <h3 className="font-display font-bold text-lg text-slate-900 text-center mb-1">
+                    {member.name}
+                  </h3>
+
+                  {/* Role */}
+                  <p className="text-xs text-brand-grey-mid text-center mb-4 font-sans">
+                    {member.role}
+                  </p>
+
+                  {/* Divider */}
+                  <div className="w-12 h-0.5 bg-slate-200 mx-auto mb-4" />
+
+                  {/* Specialties Tags */}
+                  <div className="flex flex-wrap justify-center gap-2 mb-4">
+                    {member.specialties.map((spec, i) => (
+                      <span key={i} className="px-2.5 py-0.5 text-[10px] font-sans font-medium text-brand-slate-dark border border-slate-200 rounded-full">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Bio */}
+                  <p className="text-sm text-slate-600 font-sans leading-relaxed flex-1">
+                    {member.bio}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Closing Line */}
+            <p className="text-center mt-16 text-base italic text-brand-slate-dark font-sans">
+              Juntos, formamos um time multidisciplinar que atende a empresa de forma integrada —
+              da cadeira do colaborador ao relatório do RH.
+            </p>
           </div>
         </section>
 
