@@ -80,7 +80,8 @@ export default function App() {
     company: '',
     role: '',
     numCollaborators: '1-50',
-    contact: ''
+    whatsapp: '',
+    email: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -133,7 +134,7 @@ export default function App() {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formInput.name || !formInput.company || !formInput.contact) {
+    if (!formInput.name || !formInput.company || !formInput.whatsapp) {
       alert('Por favor, preencha todos os campos obrigatórios.');
       return;
     }
@@ -166,7 +167,8 @@ export default function App() {
         company: '',
         role: '',
         numCollaborators: '1-50',
-        contact: ''
+        whatsapp: '',
+        email: ''
       });
     } catch (error) {
       alert('Erro ao enviar. Tente novamente ou chame no WhatsApp.');
@@ -319,13 +321,15 @@ export default function App() {
                       <h4 className="font-sans font-bold text-base mt-2.5">{l.name}</h4>
                       <p className="text-sm text-white/85 mt-1 font-semibold">{l.company} — <span className="font-normal text-white/70 italic text-xs">{l.role}</span></p>
                       <p className="text-xs text-white/60 mt-3 font-mono break-all flex items-center gap-1.5 bg-brand-primary/20 p-2 rounded">
-                        <Phone className="w-3.5 h-3.5 text-brand-secondary text-brand-green-accent" /> {l.contact}
+                        <Phone className="w-3.5 h-3.5 text-brand-secondary text-brand-green-accent" /> {l.whatsapp}
+                        {l.email && <span className="ml-2 text-brand-grey-mid">|</span>}
+                        {l.email && <span className="ml-2">{l.email}</span>}
                       </p>
                     </div>
 
                     <div className="flex justify-between items-center mt-4 pt-3 border-t border-white/10">
                       <a
-                        href={`https://wa.me/${l.contact.replace(/[^\d]/g, '')}`}
+                        href={`https://wa.me/${l.whatsapp.replace(/[^\d]/g, '')}`}
                         target="_blank"
                         rel="noreferrer"
                         className="text-white hover:text-brand-green-accent text-xs flex items-center gap-1 font-semibold"
@@ -1230,19 +1234,35 @@ export default function App() {
                       </select>
                     </div>
 
-                    {/* Field 5: Contact option (Phone or Email) */}
+                    {/* Field 5: WhatsApp (required) */}
                     <div>
-                      <label htmlFor="contact-input" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
-                        WhatsApp (com DDD) ou E-mail <span className="text-brand-primary">*</span>
+                      <label htmlFor="whatsapp-input" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+                        WhatsApp (com DDD) <span className="text-brand-primary">*</span>
                       </label>
                       <input
-                        type="text"
-                        name="contact"
-                        id="contact-input"
+                        type="tel"
+                        name="whatsapp"
+                        id="whatsapp-input"
                         required
-                        value={formInput.contact}
+                        value={formInput.whatsapp}
                         onChange={handleInputChange}
-                        placeholder="Ex: (31) 99142-2212 ou rh@suaempresa.com.br"
+                        placeholder="Ex: (31) 99142-2212"
+                        className="w-full bg-white border border-slate-200 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary rounded-lg text-sm p-3 font-mono"
+                      />
+                    </div>
+
+                    {/* Field 6: Email (optional) */}
+                    <div>
+                      <label htmlFor="email-input" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1">
+                        E-mail (opcional)
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email-input"
+                        value={formInput.email}
+                        onChange={handleInputChange}
+                        placeholder="Ex: rh@suaempresa.com.br"
                         className="w-full bg-white border border-slate-200 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary rounded-lg text-sm p-3 font-mono"
                       />
                     </div>

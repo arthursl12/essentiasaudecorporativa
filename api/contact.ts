@@ -5,9 +5,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, company, role, numCollaborators, contact } = req.body;
+  const { name, company, role, numCollaborators, whatsapp, email } = req.body;
 
-  if (!name || !company || !contact) {
+  if (!name || !company || !whatsapp) {
     return res.status(400).json({ error: 'Campos obrigatórios faltando' });
   }
 
@@ -17,7 +17,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     <p><strong>Empresa:</strong> ${company}</p>
     <p><strong>Cargo:</strong> ${role || 'Não informado'}</p>
     <p><strong>Colaboradores:</strong> ${numCollaborators}</p>
-    <p><strong>Contato:</strong> ${contact}</p>
+    <p><strong>WhatsApp:</strong> ${whatsapp}</p>
+    <p><strong>E-mail:</strong> ${email || 'Não informado'}</p>
     <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
   `;
 

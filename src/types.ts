@@ -26,7 +26,8 @@ export interface LeadFormInput {
   company: string;
   role: string;
   numCollaborators: string;
-  contact: string;
+  whatsapp: string;
+  email: string;
 }
 
 export interface LeadSubmission extends LeadFormInput {
