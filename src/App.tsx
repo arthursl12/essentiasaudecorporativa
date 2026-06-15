@@ -1281,14 +1281,8 @@ export default function App() {
                       >
                         <Check className="w-5 h-5 text-brand-green-accent shrink-0 mt-0.5" />
                         <div>
-                          <p className="font-bold text-sm text-slate-900">Proposta recebida com sucesso!</p>
-                          <p className="text-slate-600 mt-1">Salvamos seus dados localmente. Em até 24h nossa equipe comercial consultiva da Essentia Saúde retornará no seu contato.</p>
-                          <button
-                            onClick={() => setShowAdminLeads(true)}
-                            className="text-brand-primary hover:underline font-bold mt-2.5 flex items-center gap-1"
-                          >
-                            Visualizar leads no cabeçalho ↑
-                          </button>
+                          <p className="font-bold text-sm text-slate-900">Contato recebido com sucesso!</p>
+                          <p className="text-slate-600 mt-1">Em até 24h nossa equipe retornará no seu contato.</p>
                         </div>
                       </motion.div>
                     )}

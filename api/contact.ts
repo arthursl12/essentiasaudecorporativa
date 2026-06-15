@@ -40,6 +40,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         sender: { name: 'Arthur (da Essentia Saúde Corporativa)', email: 'essentiamarketingsocialmedia@gmail.com' },
         to: [
           { email: 'bhruna.azevedo@hotmail.com' },
+          { email: 'bhrunaazevedo@outlook.com' },
           { email: 'arthursoutolima@gmail.com' },
         ],
         subject: `Novo lead: ${name} - ${company}`,
